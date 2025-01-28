@@ -1,0 +1,26 @@
+<div class="form-container">
+    <h2>Enter Company Details</h2>
+    <form (ngSubmit)="onSubmit()" #companyForm="ngForm">
+      <!-- Company Name Selection -->
+      <label for="company">Company Name:</label>
+      <select id="company" name="company" [(ngModel)]="formData.company" required>
+        <option value="Aver Solutions Group">Aver Solutions Group</option>
+        <option value="Avlinq Solutions & Services Private Limited">Avlinq Solutions & Services Private Limited</option>
+      </select>
+  
+      <!-- Location Selection -->
+      <label for="location">Location:</label>
+      <select id="location" name="location" [(ngModel)]="formData.location" required>
+        <option value="delhi">Delhi</option>
+        <option value="noida">Noida</option>
+        <option value="abu dhabi">Abu Dhabi</option>
+        <option value="dubai">Dubai</option>
+      </select>
+  
+      <!-- Submit Button -->
+      <button type="submit" [disabled]="!companyForm.valid">Next</button>
+    </form>
+  
+  
+  </div>
+  

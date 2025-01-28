@@ -1,0 +1,113 @@
+<div class="form-container">
+  <table>
+    <tr>
+      <!-- Left Logo -->
+      <td rowspan="2" class="logo-cell">
+        <img
+          src="{{ receivedData.company == 'Avlinq Solutions & Services Private Limited' ? 'http://192.168.220.123:8080/assets/Images/avlinq-logo.png' : 'http://192.168.220.123:8080/assets/Images/aver-logo.png' }}"
+          alt="Left Logo"
+          class="logo-img"
+        />
+      </td>
+      <!-- Main Title -->
+      <td class="main-title">
+        <h1>{{ receivedData.company }}</h1>
+      </td>
+    </tr>
+    <tr>
+      <!-- Subtitle -->
+      <td class="subtitle">Stationery Requisition Form</td>
+    </tr>
+  </table>
+
+  <form (ngSubmit)="onSubmit()">
+    <!-- Form Fields -->
+    <table>
+      <tr>
+        <td class="brdr"><label for="date">Date of Requisition:</label></td>
+        <td><input type="text" id="date" name="date" placeholder="dd/mm/yyyy"></td>
+        <td class="brdr" style="width: 15rem"><label for="employeeId">Employee ID:</label></td>
+        <td><input type="text" id="employeeId" name="employeeId" placeholder="Enter Employee ID"></td>
+      </tr>
+      <tr>
+        <td class="brdr"><label for="department">Department:</label></td>
+        <td><input type="text" id="department" name="department" placeholder="Enter Department"></td>
+        <td class="brdr"><label for="name">Name:</label></td>
+        <td><input type="text" id="name" name="name" placeholder="Enter Name"></td>
+      </tr>
+    </table>
+
+    <table>
+      <tbody>
+        <tr class="brdr2">
+          <th class="brdr">Sr No</th>
+          <th class="brdr">Product Name</th>
+          <th class="brdr">Unit</th>
+          <th class="brdr">Quantity</th>
+          <th class="brdr">Required</th>
+          <th class="brdr"> <button type="button" class="add-row-button" (click)="addRow()">Add Row</button></th> <!-- Added a column for button -->
+        </tr>
+
+        <tr *ngFor="let item of formData; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>
+            <input
+              type="text"
+              [(ngModel)]="item.productName"
+              name="productName{{ i }}"
+              required
+            />
+          </td>
+          <td>
+            <input
+              type="text"
+              [(ngModel)]="item.unit"
+              name="unit{{ i }}"
+              required
+            />
+          </td>
+          <td>
+            <input
+              type="number"
+              [(ngModel)]="item.quantity"
+              name="quantity{{ i }}"
+              (input)="calculateTotals()"
+              required
+            />
+          </td>
+          <td>
+            <input
+              type="number"
+              [(ngModel)]="item.required"
+              name="required{{ i }}"
+              (input)="calculateTotals()"
+              required
+            />
+          </td>
+          <!-- Add Row Button in the last column -->
+          <td class="add-row-cell">
+            <button style="background-color: red;" type="button" class="del-row-button" (click)="delRow(i)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3" class="total-label brdr">Total Quantity:</td>
+          <td colspan="3">{{ totalQuantity }}</td>
+        </tr>
+        <tr>
+          <td colspan="3" class="total-label brdr">Total Required:</td>
+          <td colspan="3">{{ totalRequired }}</td>
+        </tr>
+        <div style="">
+          <button type="submit" class="submit-button">Submit</button>
+        </div>
+        
+       
+      </tfoot>
+    </table>
+
+    <!-- Buttons -->
+    
+  </form>
+</div>
