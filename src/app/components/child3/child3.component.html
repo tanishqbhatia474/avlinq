@@ -1,0 +1,29 @@
+<div>
+    <h2>Requisition Items</h2>
+  
+    <table border="1" class="requisition-table">
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Unit</th>
+          <th>Quantity</th>
+          <th>Approve</th>  <!-- Column header for Approve button -->
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Loop through each form -->
+        <ng-container *ngFor="let form of requisitionForms">
+          <!-- Loop through items of each form -->
+          <tr *ngFor="let item of form.items">
+            <td>{{ item.productName }}</td>
+            <td>{{ item.unit }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>
+              <button (click)="onApprove(item)">Approve</button>  <!-- Approve button for each item -->
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+  

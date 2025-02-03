@@ -1,0 +1,30 @@
+<div class="form-container">
+    <table>
+      <tr>
+        <td rowspan="2" class="logo-cell">
+          <!-- Add your logo image here -->
+          <img src="https://www.avlinqsolutions.com/wp-content/uploads/2022/07/cropped-Final-Logo-1-e1648193941713-160x148.png" alt="Logo" class="logo-img" />
+        </td>
+        <td class="main-title">
+          <h1>Avlinq Solutions & Services Private Limited</h1>
+        </td>
+      </tr>
+      <tr>
+        <td class="subtitle">Stationery Dashboard</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="button-cell">
+          <button class="custom-button" (click)="setComponent('child1')">Show Stock</button>
+          <button class="custom-button" (click)="setComponent('child2')">Edit Stock</button>
+          <button class="custom-button" (click)="setComponent('child3')">Issue Stock</button>
+        </td>
+      </tr>
+    </table>
+  
+    <div [ngSwitch]="selectedComponent">
+      <app-child1 *ngSwitchCase="'child1'"></app-child1>
+      <app-child2 *ngSwitchCase="'child2'"></app-child2>
+      <app-child3 *ngSwitchCase="'child3'"></app-child3>
+    </div>
+  </div>
+  

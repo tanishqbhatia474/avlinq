@@ -1,0 +1,48 @@
+/* Styling for the table and form elements */
+.form-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border: 1px solid black;  /* Outer border for the entire table */
+  }
+  
+  .form-table td, .form-table th {
+    border: 1px solid black;  /* Black border around each table cell */
+    padding: 8px;
+    text-align: center;
+  }
+  .red-button {
+    padding: 10px 20px;
+    margin: 2rem;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .form-table label {
+    font-weight: bold;
+  }
+  
+  .form-table input, .form-table select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* button:hover {
+    background-color: #45a049;
+  } */
+  .subtitle {
+   
+    font-weight: bold;
+    background-color: rgb(234, 231, 231);
+  }

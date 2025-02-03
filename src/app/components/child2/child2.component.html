@@ -1,0 +1,34 @@
+<div>
+    <!-- Form to edit product stock details in table format -->
+    <div *ngIf="selectedItem">
+      <form (ngSubmit)="onUpdateItem()">
+        <table class="form-table">
+          <!-- Row for Product Selection, Quantity Left, and Unit -->
+          <tr>
+            <td class="subtitle"><label for="product">Select Product</label></td>
+            <td>
+              <select id="product" [(ngModel)]="selectedItem" name="product" (ngModelChange)="onSelectItem(selectedItem)">
+                <option value="" disabled selected>Select a product</option>
+                <option *ngFor="let item of stationeryItems" [ngValue]="item">
+                  {{ item.stationery_product_name }}
+                </option>
+              </select>
+            </td>
+            <td class="subtitle"><label for="quantity">Quantity Left</label></td>
+            <td><input id="quantity" type="number" [(ngModel)]="updatedQuantity" name="quantity" required /></td>
+            <td class="subtitle"><label for="unit">Unit</label></td>
+            <td><input id="unit" type="text" [(ngModel)]="updatedUnit" name="unit" required /></td>
+          </tr>
+  
+          <!-- Row for the Submit Button and Red Button -->
+          <tr>
+            <td colspan="6" style="text-align: center;">
+              <button type="submit" class="green-button">Update Stock</button>
+              <button type="button" (click)="onDeleteItem()" class="red-button">Delete This Stock</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+  

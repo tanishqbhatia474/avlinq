@@ -1,0 +1,21 @@
+
+    <table class="stock-table">
+     <thead>
+        <tr class="subtitle">
+          <th>Sr No</th>
+          <th>Product Name</th>
+          <th>Unit</th>
+          <th>Quantity Left</th>
+        </tr>
+      </thead> 
+      <tbody>
+        <tr *ngFor="let item of stationeryItems; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ item.stationery_product_name }}</td>
+          <td>{{ item.stationery_unit }}</td>
+          <td>{{ item.stationery_quantity_left }}</td>
+        </tr>
+      </tbody>
+    </table>
+ 
+  

@@ -1,0 +1,97 @@
+/* Overall container styling */
+div {
+    margin: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Heading style */
+  h2 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 24px;
+  }
+  
+  /* Table styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  /* Header Row styling */
+  th {
+    background-color: #f2f2f2;
+    color: #2c3e50;
+    font-size: 14px;
+  }
+  
+  /* Row styling */
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  tr:hover {
+    background-color: #e1f5fe;
+  }
+  
+  /* Styling for the form data (if needed for forms outside the table) */
+  input, select, button {
+    padding: 8px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  .requisition-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  .requisition-table th, .requisition-table td {
+    padding: 12px 15px;
+    text-align: left;
+  }
+  
+  .requisition-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .requisition-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .requisition-table tr:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .requisition-table button {
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .requisition-table button:hover {
+    background-color: #45a049;
+  }
+  
