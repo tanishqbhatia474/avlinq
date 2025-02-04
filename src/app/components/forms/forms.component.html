@@ -40,7 +40,7 @@
           <th class="brdr">Product Name</th>
           <th class="brdr">Unit</th>
           <th class="brdr">Quantity</th>
-          <th class="brdr">Required</th>
+          <!-- <th class="brdr">Required</th> -->
           <th class="brdr">
             <button type="button" class="add-row-button" (click)="addRow()">Add Row</button>
           </th>
@@ -73,7 +73,7 @@
               required
             />
           </td>
-          <td>
+          <!-- <td>
             <input
               type="number"
               [(ngModel)]="item.required"
@@ -81,7 +81,7 @@
               (input)="calculateTotals()"
               required
             />
-          </td>
+          </td> -->
           <td class="add-row-cell">
             <button style="background-color: red;" type="button" class="del-row-button" (click)="delRow(i)">Delete</button>
           </td>

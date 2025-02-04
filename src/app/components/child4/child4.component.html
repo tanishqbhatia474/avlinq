@@ -1,0 +1,77 @@
+<div class="form-container">
+    <!-- Requisition Form -->
+    <form (ngSubmit)="onSubmit()">
+      <table>
+        <tr>
+          <td class="brdr"><label for="date">Date of Stock Addition</label></td>
+          <td>
+            <input type="text" [(ngModel)]="formData.requisitionDate" id="date" name="date" placeholder="dd/mm/yyyy">
+          </td>
+          <td class="brdr" style="width: 15rem"><label for="employeeId">Employee ID:</label></td>
+          <td>
+            <input type="text" [(ngModel)]="formData.employeeId" id="employeeId" name="employeeId" placeholder="Enter Employee ID">
+          </td>
+        </tr>
+        <tr>
+          <td class="brdr"><label for="department">Department:</label></td>
+          <td>
+            <input type="text" [(ngModel)]="formData.department" id="department" name="department" placeholder="Enter Department">
+          </td>
+          <td class="brdr"><label for="name">Name:</label></td>
+          <td>
+            <input type="text" [(ngModel)]="formData.name" id="name" name="name" placeholder="Enter Name">
+          </td>
+        </tr>
+      </table>
+    
+      <table>
+        <tbody>
+          <tr class="brdr2">
+            <th class="brdr">Sr No</th>
+            <th class="brdr">Product Name</th>
+            <th class="brdr">Unit</th>
+            <th class="brdr">Quantity</th>
+            <th class="brdr">
+              <button type="button" class="add-row-button" (click)="addRow()">Add Row</button>
+            </th>
+          </tr>
+    
+          <tr *ngFor="let item of formData.items; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>
+              <input type="text" [(ngModel)]="item.productName" name="productName{{ i }}" required />
+            </td>
+            <td>
+              <input type="text" [(ngModel)]="item.unit" name="unit{{ i }}" required />
+            </td>
+            <td>
+              <input type="number" [(ngModel)]="item.quantity" name="quantity{{ i }}" (input)="calculateTotals()" required />
+            </td>
+            <td class="add-row-cell">
+              <button style="background-color: red;" type="button" class="del-row-button" (click)="delRow(i)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3" class="total-label brdr">Total Quantity:</td>
+            <td colspan="3">{{ totalQuantity }}</td>
+          </tr>
+          <tr>
+            <td colspan="3" class="total-label brdr">Total Required:</td>
+            <td colspan="3">{{ totalRequired }}</td>
+          </tr>
+          <tr>
+            <td colspan="3" class="total-label brdr">Total Units:</td>
+            <td colspan="3">{{ totalQuantity + totalRequired }}</td>
+          </tr>
+          <tr>
+            <td colspan="6">
+              <button type="submit" class="submit-button">Submit</button>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </form>
+  </div>
+  

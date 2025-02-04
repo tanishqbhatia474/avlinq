@@ -16,7 +16,9 @@
         <td colspan="2" class="button-cell">
           <button class="custom-button" (click)="setComponent('child1')">Show Stock</button>
           <button class="custom-button" (click)="setComponent('child2')">Edit Stock</button>
+          <button class="custom-button" (click)="setComponent('child4')">Add Stock</button>
           <button class="custom-button" (click)="setComponent('child3')">Issue Stock</button>
+         
         </td>
       </tr>
     </table>
@@ -25,6 +27,7 @@
       <app-child1 *ngSwitchCase="'child1'"></app-child1>
       <app-child2 *ngSwitchCase="'child2'"></app-child2>
       <app-child3 *ngSwitchCase="'child3'"></app-child3>
+      <app-child4 *ngSwitchCase="'child4'"></app-child4>
     </div>
   </div>
   
