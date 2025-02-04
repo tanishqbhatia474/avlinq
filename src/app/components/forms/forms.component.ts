@@ -91,7 +91,7 @@ export class FormsComponent {
       alert('An error occurred while submitting the form. Check the console for details.');
     }
   }
-
+ 
   sendFormDataToBackend(formData: any) {
     const apiUrl = 'https://localhost:44387/api/RequisitionForms/AddRequisitionForm';  // Endpoint for adding requisition form
     
