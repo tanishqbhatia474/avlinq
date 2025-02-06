@@ -1,14 +1,15 @@
 <div>
     <h2>Requisition Items</h2>
-  
+
     <table border="1" class="requisition-table">
       <thead>
         <tr>
           <th>Product Name</th>
           <th>Unit</th>
           <th>Quantity</th>
+          <th>Employee ID</th> <!-- Added Employee ID column -->
           <th>Approve</th>
-          <!-- Column header for Approve button -->
+          <th>Delete</th>
         </tr>
       </thead>
       <tbody>
@@ -19,14 +20,15 @@
             <td>{{ item.productName }}</td>
             <td>{{ item.unit }}</td>
             <td>{{ item.quantity }}</td>
+            <td>{{ form.employeeId }}</td> <!-- Display Employee ID -->
             <td>
-              <button (click)="onApprove(item)">Approve</button>  <!-- Approve button for each item -->
+              <button (click)="onApprove(item)">Approve</button>  
             </td>
-           
-            
+            <td>
+              <button style="background-color: red;" (click)="deleteRequisitionItem(item.id)">Deny</button>
+            </td>
           </tr>
         </ng-container>
       </tbody>
     </table>
-  </div>
-  
+</div>

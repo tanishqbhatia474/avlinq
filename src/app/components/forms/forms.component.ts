@@ -118,7 +118,7 @@ export class FormsComponent {
     });
   }
 
-  addRow() {
+  addRow() { 
     const newSerial = this.formData.items.length + 1;
     this.formData.items.push({
       serialNo: newSerial,
