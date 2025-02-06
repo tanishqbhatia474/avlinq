@@ -147,12 +147,11 @@ export class Child4Component implements OnInit {
   // Helper method to calculate totals (if needed)
   calculateTotals() {
     this.totalQuantity = 0;
-    this.totalRequired = 0;
-    this.totalUnits = 0;
+   
 
     this.formData.items.forEach(item => {
       this.totalQuantity += item.quantity || 0;
-      this.totalRequired += item.required || 0;
+     
     });
   }
 
@@ -171,6 +170,8 @@ export class Child4Component implements OnInit {
   delRow(index: number) {
     if (this.formData.items.length > 1) {
       this.formData.items.splice(index, 1);
+      this.calculateTotals(); // Recalculate totals after deletion
     }
   }
+  
 }
